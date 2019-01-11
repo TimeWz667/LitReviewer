@@ -1,0 +1,38 @@
+
+.container {
+    padding: 45px;
+    padding-top: 200px;
+}
+
+.form-login {
+    background-color: #63C0BB;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 15px;
+    border-color:#d2d2d2;
+    border-width: 5px;
+    box-shadow:0 1px 0 #cfcfcf;
+    height: 100%;
+}
+
+h2 {
+ border:0 solid #fff;
+ border-bottom-width:1px;
+ padding-bottom:50px;
+ text-align: center;
+}
+
+.form-control {
+    border-radius: 10px;
+}
+
+input {
+    padding: 20px;
+}
+
+input[type="text"] {
+    font-size: 20px;
+    height: 60px;
+}

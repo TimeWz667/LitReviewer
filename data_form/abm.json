@@ -1,0 +1,339 @@
+[
+    {
+        "Name": "InMainObjective",
+        "Type": "Bool",
+        "Text": "In Main Objective?"
+  },
+    {
+        "Name": "DetailProvided",
+        "Type": "Options",
+        "Text": "Detail provided?",
+        "Value": [
+      "",
+      "Abstractive",
+      "Detailed"
+    ]
+  },
+    {
+        "Name": "TopicType",
+        "Type": "Options",
+        "Text": "Type of topic?",
+        "Value": [
+      "",
+      "Life Style Choosing: Smoking",
+      "Life Style Choosing: Alcohol",
+      "Life Style Choosing: Drug",
+      "Life Style Choosing: Food",
+      "Life Style Choosing: Physical exercise",
+      "Life Style Choosing: Body Weight Control",
+      "Facing disease: Insurance planning",
+      "Facing disease: Infection prevention (Before exposure)",
+      "Facing disease: Disease prevention (Before onset)",
+      "Health service using: Care seeking",
+      "Health service using: Attendance",
+      "Health status orientation: Untended pregnancy",
+      "After disease: Back to work"
+    ]
+  },
+    {
+        "Name": "TopicNote",
+        "Type": "Text",
+        "Text": "Note of topic"
+  },
+    {
+        "Name": "ModelPurpose",
+        "Type": "Options",
+        "Text": "Purpose of model?",
+        "Value": [
+      "",
+      "Phenomena explanation",
+      "Theory demonstration",
+      "Policy projection",
+      "Model demonstration",
+      "Other"
+    ]
+  },
+    {
+        "Name": "ModelType",
+        "Type": "Options",
+        "Text": "Main term of ABM used in paper?",
+        "Value": [
+      "",
+      "Agent-based model",
+      "Individual-based model",
+      "Multi-agent model",
+      "Microsimulation",
+      "Discrete event simulation"
+    ]
+  },
+    {
+        "Name": "BeModel",
+        "Type": "Options",
+        "Text": "Conceptual model of behaviour?",
+        "Value": [
+      "",
+      "Subjective Norm (TPB)",
+      "Perception (HBM)",
+      "Utility (Economics)",
+      "Imitation (FTA)",
+      "Mixture",
+            "None"
+    ]
+  },
+    {
+        "Name": "CalibrationType",
+        "Type": "Options",
+        "Text": "Way to make model acts like reality?",
+        "Value": [
+      "",
+      "Pattern matching",
+      "Statistical fitting",
+      "Using empirical parameters",
+      "Not necessary (theoretical model)",
+      "Not mentioned"
+    ]
+  },
+    {
+        "Name": "CalibrationNote",
+        "Type": "Text",
+        "Text": "Note of calibration"
+  },
+    {
+        "Name": "FunctionType1",
+        "Type": "Bool",
+        "Text": "Algorithmic rule"
+  },
+    {
+        "Name": "FunctionType2",
+        "Type": "Bool",
+        "Text": "Regression"
+  },
+    {
+        "Name": "FunctionType3",
+        "Type": "Bool",
+        "Text": "Mathematical equation"
+  },
+    {
+        "Name": "FunctionType41",
+        "Type": "Bool",
+        "Text": "Optimisation: Game theory"
+  },
+    {
+        "Name": "FunctionType42",
+        "Type": "Bool",
+        "Text": "Optimisation: Personal utility"
+  },
+    {
+        "Name": "FunctionType43",
+        "Type": "Bool",
+        "Text": "Threshold"
+  },
+    {
+        "Name": "FunctionType51",
+        "Type": "Bool",
+        "Text": "Uncertainty: Unknown information"
+  },
+    {
+        "Name": "FunctionType52",
+        "Type": "Bool",
+        "Text": "Uncertainty: Biased information"
+  },
+    {
+        "Name": "FunctionType53",
+        "Type": "Bool",
+        "Text": "Uncertainty: Stochasticity"
+  },
+    {
+        "Name": "FunctionTypeNote",
+        "Type": "Text",
+        "Text": "Note of function"
+  },
+    {
+        "Name": "Trigger",
+        "Type": "Text",
+        "Text": "Trigger"
+  },
+    {
+        "Name": "Para11",
+        "Type": "Options",
+        "Text": "Personal information: Age Sex",
+        "Value": [
+      "None",
+      "E: T, Q: T",
+      "E: D, Q: T",
+      "E: F, Q: T",
+      "E: T, Q: D",
+      "E: D, Q: D",
+      "E: F, Q: D"
+    ]
+  },
+    {
+        "Name": "Para12",
+        "Type": "Options",
+        "Text": "Personal information: SES",
+        "Value": [
+      "None",
+      "E: T, Q: T",
+      "E: D, Q: T",
+      "E: F, Q: T",
+      "E: T, Q: D",
+      "E: D, Q: D",
+      "E: F, Q: D"
+    ]
+  },
+    {
+        "Name": "Para13",
+        "Type": "Options",
+        "Text": "Personal information: Health Status",
+        "Value": [
+      "None",
+      "E: T, Q: T",
+      "E: D, Q: T",
+      "E: F, Q: T",
+      "E: T, Q: D",
+      "E: D, Q: D",
+      "E: F, Q: D"
+    ]
+  },
+    {
+        "Name": "Para14",
+        "Type": "Options",
+        "Text": "Personal information: Preference",
+        "Value": [
+      "None",
+      "E: T, Q: T",
+      "E: D, Q: T",
+      "E: F, Q: T",
+      "E: T, Q: D",
+      "E: D, Q: D",
+      "E: F, Q: D"
+    ]
+  },
+    {
+        "Name": "Para21",
+        "Type": "Options",
+        "Text": "Social network: Health status",
+        "Value": [
+      "None",
+      "E: T, Q: T",
+      "E: D, Q: T",
+      "E: F, Q: T",
+      "E: T, Q: D",
+      "E: D, Q: D",
+      "E: F, Q: D"
+    ]
+  },
+    {
+        "Name": "Para22",
+        "Type": "Options",
+        "Text": "Social network: Behaviors",
+        "Value": [
+      "None",
+      "E: T, Q: T",
+      "E: D, Q: T",
+      "E: F, Q: T",
+      "E: T, Q: D",
+      "E: D, Q: D",
+      "E: F, Q: D"
+    ]
+  },
+    {
+        "Name": "Para31",
+        "Type": "Options",
+        "Text": "Global variables: Health Status",
+        "Value": [
+      "None",
+      "E: T, Q: T",
+      "E: D, Q: T",
+      "E: F, Q: T",
+      "E: T, Q: D",
+      "E: D, Q: D",
+      "E: F, Q: D"
+    ]
+  },
+    {
+        "Name": "Para32",
+        "Type": "Options",
+        "Text": "Global variables: Social norm",
+        "Value": [
+      "None",
+      "E: T, Q: T",
+      "E: D, Q: T",
+      "E: F, Q: T",
+      "E: T, Q: D",
+      "E: D, Q: D",
+      "E: F, Q: D"
+    ]
+  },
+    {
+        "Name": "Para33",
+        "Type": "Options",
+        "Text": "Global variables: Environment",
+        "Value": [
+      "None",
+      "E: T, Q: T",
+      "E: D, Q: T",
+      "E: F, Q: T",
+      "E: T, Q: D",
+      "E: D, Q: D",
+      "E: F, Q: D"
+    ]
+  },
+    {
+        "Name": "Para41",
+        "Type": "Options",
+        "Text": "Cost: Finance",
+        "Value": [
+      "None",
+      "E: T, Q: T",
+      "E: D, Q: T",
+      "E: F, Q: T",
+      "E: T, Q: D",
+      "E: D, Q: D",
+      "E: F, Q: D"
+    ]
+  },
+    {
+        "Name": "Para42",
+        "Type": "Options",
+        "Text": "Cost: Non-Finance",
+        "Value": [
+      "None",
+      "E: T, Q: T",
+      "E: D, Q: T",
+      "E: F, Q: T",
+      "E: T, Q: D",
+      "E: D, Q: D",
+      "E: F, Q: D"
+    ]
+  },
+    {
+        "Name": "Para51",
+        "Type": "Options",
+        "Text": "Single probability function",
+        "Value": [
+      "None",
+      "E: T, Q: T",
+      "E: D, Q: T",
+      "E: F, Q: T",
+      "E: T, Q: D",
+      "E: D, Q: D",
+      "E: F, Q: D"
+    ]
+  },
+    {
+        "Name": "ParaNote",
+        "Type": "Text",
+        "Text": "Note of parameters"
+  },
+    {
+        "Name": "Platform",
+        "Type": "Text",
+        "Text": "Platform"
+  },
+    {
+        "Name": "Note",
+        "Type": "Text",
+        "Text": "Note"
+  }
+]

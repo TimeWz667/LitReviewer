@@ -1,0 +1,32 @@
+.affix {
+    top: 0;
+    z-index: 35;
+    background-color: white;
+}
+
+#navbar {
+    width: 100%;
+    z-index: 150;
+}
+
+#sidebar {
+    padding-top: 110px;
+    z-index: 100;
+}
+
+
+.affix + .container-fluid {
+    padding-top: 70px;
+}
+
+.foot {
+    bottom: 0;
+    width: 80%;
+    position: fixed;
+    background-color: whitesmoke;
+    z-index: 9999;
+}
+
+.sidebtn {
+    padding-top: 10px;
+}

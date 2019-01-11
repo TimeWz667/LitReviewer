@@ -1,0 +1,44 @@
+[
+  {
+    "Name": "Purpose",
+    "Type": "Text",
+    "Text": "What was the purpose of the model?"
+  },
+  {
+    "Name": "Setting",
+    "Type": "Text",
+    "Text": "What was the setting?"
+  },
+  {
+    "Name": "Quality",
+    "Type": "Options",
+    "Text": "What was the overall quality?",
+    "Value": [
+      "",
+      "Execellent",
+      "Good",
+      "Soso",
+      "Loose"
+    ]
+  },
+  {
+    "Name": "Methods",
+    "Type": "Text",
+    "Text": "What were the methods?"
+  },
+  {
+    "Name": "Key Results",
+    "Type": "Text",
+    "Text": "What were the results?"
+  },
+  {
+    "Name": "Useful",
+    "Type": "Bool",
+    "Text": "Is the results valuable?"
+  },
+  {
+    "Name": "Note",
+    "Type": "Text",
+    "Text": "Comments and notes"
+  }
+]

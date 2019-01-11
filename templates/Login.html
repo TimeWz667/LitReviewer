@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link href="<{ url_for('static', filename='css/login.css') }>" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-md-offset-5 col-md-3">
+                <div class="form-login">
+                    <h2>Reviewer</h2>
+
+                    <form class="form-horizontal" action="<{ url_for('login') }>" method = "post">
+                        <% for field in form if field.label.text != 'CSRF Token'%>
+                        <div class="form-group">
+                        <{ field(class="form-control", placeholder='User Name') }>
+                        </div>
+                        <% endfor %>
+                        <input class="btn btn-lg btn-warning btn-block" type="submit" value="Start">
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

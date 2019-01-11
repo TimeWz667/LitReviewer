@@ -1,0 +1,39 @@
+<% extends "layout.html" %>
+
+<%  block init %>
+
+<%  endblock %>
+
+<% block main %>
+
+
+<div class="row">
+    <nav class="col-md-3">
+        <ul class="nav nav-pills nav-stacked" data-spy="affix" data-offset-top="107"
+            style="padding-top: 127px; z-index: 100">
+            <li><a href="#wordcloud">Word cloud</a></li>
+            <li><a href="#trend">Trend plot</a></li>
+
+        </ul>
+    </nav>
+
+
+    <div class="col-md-9">
+        <div id="wordcloud">
+            <h1>Word cloud of all abstracts</h1>
+            <div id="wc"><img class="center-block" src="<{ url_for('abstract_wc_all') }>" style="width: 100%"></div>
+        </div>
+
+    </div>
+</div>
+
+
+<%  endblock %>
+
+<%  block foot %>
+
+<%  endblock %>
+
+<%  block load %>
+
+<%  endblock %>

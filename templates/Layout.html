@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><{ title }></title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link href="<{ url_for('static', filename='css/layout.css') }>" rel="stylesheet">
+
+    <% block init %><% endblock %>
+</head>
+<body>
+
+<div class="container" style="padding-bottom: 50px">
+    <div class="well well-lg" style="height:150px;">
+        <h1>Reviewer <{ user }> is reviewing <{ obj }></h1>
+    </div>
+    <div class="container-fluid" id="navbar" data-spy="affix" data-offset-top="147">
+        <ul class="nav nav-tabs">
+            <li><a href="<{ url_for('logout') }>">Log out</a></li>
+            <li><a href="<{ url_for('select_project') }>">Load Project</a></li>
+            <li><a href="<{ url_for('index')}>">Paper List</a></li>
+            <li><a href="<{ url_for('summary')}>">Summary</a></li>
+                        <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Output Bibtex
+                    <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="<{ url_for('output_bib') }>">all</a></li>
+                    <li><a href="<{ url_for('output_sel_bib') }>">selected</a></li>
+                </ul>
+            </li>
+
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Output Results
+                    <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="<{ url_for('output_json') }>">to json</a></li>
+                    <li><a href="<{ url_for('output_csv') }>">to csv</a></li>
+                </ul>
+            </li>
+
+
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Filter by status
+                    <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <% for st in sts %>
+                        <li><a href="/filter/<{ st[0] }>"><{st[0]}> <span class="badge"><{st[1]}></span></a></li>
+                    <% endfor %>
+                </ul>
+            </li>
+
+
+        </ul>
+    </div>
+
+</div>
+
+
+<div class="container" style="padding-bottom: 50px">
+    <% block main %><% endblock %>
+</div>
+
+
+<div class="container">
+    <% block foot %><% endblock %>
+</div>
+
+
+</body>
+
+
+<% block load %><% endblock %>
+
+</html>

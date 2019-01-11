@@ -1,0 +1,117 @@
+<% extends "layout.html" %>
+
+<%  block init %>
+
+<%  endblock %>
+
+<% block main %>
+
+
+<form class="form-horizontal" method="post">
+
+    <div class="row">
+        <div class="col-md-2">
+            <div data-spy="affix" id="sidebar" data-offset-top="167">
+                <input class="btn btn-primary btn-block" type="submit" name="btn" value="Save">
+
+                <h4>View: </h4>
+                <div class="btn btn-info btn-block" data-toggle="modal" data-target="#abstract">Abstract</div>
+                <div class="btn btn-info btn-block" data-toggle="modal" data-target="#wordcloud">Word Cloud</div>
+
+                <h4>Status: <{ paper.Status }></h4>
+                <input class="btn btn-success btn-block" type="submit" name="btn" value="Approve">
+                <div class="btn-group btn-block">
+                    <button type="button" class="btn btn-default btn-block dropdown-toggle" data-toggle="dropdown">
+                        Drop <span class="caret"></span></button>
+                    <ul class="dropdown-menu" role="menu">
+                        <% for reason in out_reasons %>
+                            <li><input class="btn btn-default btn-block" type="submit" name="btn-drop" value="<{ reason }>"></li>
+                        <% endfor %>
+                    </ul>
+                </div>
+                <input class="btn btn-warning btn-block" type="submit" name="btn" value="Disapprove">
+
+
+                <h4></h4>
+                <% if has_previous %>
+                <a href="<{ previous }>" class="btn btn-success btn-block sidebtn" role="button">Previous</a>
+                <% else %>
+                <div class="sidebtn"></div>
+                <% endif %>
+                <% if has_next %>
+                <a href="<{ next }>" class="btn btn-success btn-block sidebtn" role="button">Next</a>
+                <% endif %>
+
+
+            </div>
+        </div>
+
+        <div class="col-md-10">
+
+            <h4><b>Title:</b> <{ paper.Title }></h4>
+            <h4><b>Authors:</b> <{ paper.Authors }></h4>
+            <h4><b>Year:</b> <{ paper.Year }></h4>
+            <h4><b>Journal:</b> <{ paper.Journal }></h4>
+
+            <% for field in form if field.label.text != 'CSRF Token'%>
+            <% if field.type != "SubmitField" %>
+            <div class="form-group" style="text-align: left">
+                <{ field.label(class_="control-label col-sm-5", style="text-align: left") }>
+                <div class="col-sm-7">
+                    <{ field(class="form-control") }>
+                </div>
+            </div>
+            <% endif %>
+            <% endfor %>
+
+        </div>
+    </div>
+
+
+</form>
+<br>
+
+<%  endblock %>
+
+<%  block foot %>
+
+
+<div id="wordcloud" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Word cloud of the Abstract</h4>
+            </div>
+            <div class="modal-body">
+                <div id="wc"><img class="center-block" src="<{ url_for('abstract_wc', paper_id=id) }>"></div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<div id="abstract" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Abstract</h4>
+            </div>
+            <div class="modal-body">
+                <p style="font-size: 16pt"><{ paper.Abstract }></p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<%  endblock %>
+
+<%  block load %>
+
+<%  endblock %>

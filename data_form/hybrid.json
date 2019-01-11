@@ -1,0 +1,169 @@
+[
+  {
+    "Name": "Purpose",
+    "Type": "Text",
+    "Text": "What was the purpose of the model?"
+  },
+  {
+    "Name": "Purpose type",
+    "Type": "Options",
+    "Text": "What was the type of the study?",
+    "Value": [
+      "",
+      "Deriving hybrid modelling theory",
+      "Exemplifying of hybrid modelling",
+      "Discussion of hybrid modelling",
+      "Applying hybrid modelling"
+    ]
+  },
+  {
+    "Name": "BasicNote",
+    "Type": "Text",
+    "Text": "Notes of purpose"
+  },
+  {
+    "Name": "HasImp",
+    "Type": "Bool",
+    "Text": "Was there a clear implementation detail of the model?"
+  },
+  {
+    "Name": "HasSim",
+    "Type": "Bool",
+    "Text": "Was there at least one simulation experiment of the model?"
+  },
+  {
+    "Name": "ABMTerm",
+    "Type": "Options",
+    "Text": "What did the term describe the ABM?",
+    "Value": [
+      "",
+      "Agent-Based Model",
+      "Individual-Based Model",
+      "Multi-Agent System",
+      "Microsimulation",
+      "Discrete-Event Simulation"
+    ]
+  },
+  {
+    "Name": "ABMEntity",
+    "Type": "Text",
+    "Text": "What were the entities modelled in the ABM?"
+  },
+  {
+    "Name": "ABMSto",
+    "Type": "Bool",
+    "Text": "Was the ABM stochastic?"
+  },
+  {
+    "Name": "ABMDataPop",
+    "Type": "Bool",
+    "Text": "Was the ABM populated with empirical data?"
+  },
+  {
+    "Name": "ABMDataPar",
+    "Type": "Bool",
+    "Text": "Was the parameters of the ABM from empirical data?"
+  },
+  {
+    "Name": "ABMDataFit",
+    "Type": "Bool",
+    "Text": "Was the ABM calibrated by empirical observation?"
+  },
+  {
+    "Name": "ABMNote",
+    "Type": "Text",
+    "Text": "Notes of the ABM"
+  },
+  {
+    "Name": "EBMTerm",
+    "Type": "Options",
+    "Text": "What did the term describe the EBM?",
+    "Value": [
+      "",
+      "Equation-Based Model",
+      "System Dynamics",
+      "* Differential Equation",
+      "Compartmental Model"
+    ]
+  },
+  {
+    "Name": "EBMEntity",
+    "Type": "Text",
+    "Text": "What were the entities modelled in the EBM?"
+  },
+  {
+    "Name": "EBMSto",
+    "Type": "Bool",
+    "Text": "Was the EBM stochastic?"
+  },
+  {
+    "Name": "EBMDataPop",
+    "Type": "Bool",
+    "Text": "Was the EBM populated with empirical data?"
+  },
+  {
+    "Name": "EBMDataPar",
+    "Type": "Bool",
+    "Text": "Was the parameters of the EBM from empirical data?"
+  },
+  {
+    "Name": "EBMDataFit",
+    "Type": "Bool",
+    "Text": "Was the EBM calibrated by empirical observation?"
+  },
+  {
+    "Name": "EBMNote",
+    "Type": "Text",
+    "Text": "Notes of the EBM"
+  },
+  {
+    "Name": "Overlap",
+    "Type": "Bool",
+    "Text": "Did the ABM and the EBM include same entities?"
+  },
+  {
+    "Name": "Relation",
+    "Type": "Options",
+    "Text": "What is the relation of the ABM and the EBM?",
+    "Value": [
+      "",
+      "Interactive: ABM  -> EBM",
+      "Interactive: ABM <-  EBM",
+      "Interactive: ABM <-> EBM",
+      "Sequential: ABM -> EBM",
+      "Sequential: EBM -> ABM",
+      "Sequential: Many times",
+      "EBMs as sub-models of ABM",
+      "ABMs as sub-models of EBM",
+      "More than one connection"
+    ]
+  },
+  {
+    "Name": "Interactivity",
+    "Type": "Options",
+    "Text": "What is the frequency of interactions of the ABM and the EBM?",
+    "Value": [
+      "",
+      "Once",
+      "One, time step",
+      "More than one, time step",
+      "More than one, continuously",
+      "Discrete event driven"
+    ]
+  },
+  {
+    "Name": "Connection",
+    "Type": "Text",
+    "Text": "How did the two model connect to each other?"
+  },
+  {
+    "Name": "Platform",
+    "Type": "Text",
+    "Text": "What was the modelling platform?"
+  },
+  {
+    "Name": "Note",
+    "Type": "Text",
+    "Text": "Comments and notes"
+  }
+]

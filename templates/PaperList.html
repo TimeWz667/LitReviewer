@@ -1,0 +1,41 @@
+<% extends "layout.html" %>
+
+<%  block init %>
+
+<%  endblock %>
+
+<% block main %>
+<h2>Paper List</h2>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th style="width: 5%">ID</th>
+        <th style="width: 15%">Authors</th>
+        <th style="width: 5%">Year</th>
+        <th style="width: 65%">Title</th>
+        <th style="width: 10%">Status</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% for paper in papers %>
+    <tr>
+        <td><{ paper.ID }></td>
+        <td><{ paper.Authors }></td>
+        <td><{ paper.Year }></td>
+        <td><a href="/paper/<{ paper.ID }>"><{ paper.Title }></a></td>
+        <td><{ paper.Status }></td>
+    </tr>
+    <% endfor %>
+    </tbody>
+</table>
+
+<%  endblock %>
+
+<%  block foot %>
+
+<%  endblock %>
+
+<%  block load %>
+
+<%  endblock %>

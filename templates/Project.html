@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Select project</title>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+    <link href="<{ url_for('static', filename='css/login.css') }>" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-md-offset-1 col-md-5" style="height: 500px">
+            <div class="form-login">
+                <h2>New project</h2>
+                <form class="form-horizontal" action="<{ url_for('new_project') }>" method="post"
+                      enctype="multipart/form-data">
+                    <% for field in new_form if field.label.text != 'CSRF Token'%>
+                    <% if field.type != "SubmitField" %>
+                    <div class="form-group" style="text-align: left">
+                        <{ field.label(class_="control-label col-sm-5", style="text-align: left") }>
+                        <div class="col-sm-7">
+                            <{ field(class="form-control") }>
+                        </div>
+                    </div>
+                    <% else %>
+                    <div class="col-md-12"><{ field(class="form-control btn btn-warning btn-block") }></div>
+                    <% endif %>
+                    <% endfor %>
+                </form>
+            </div>
+        </div>
+
+        <div class="col-md-5" style="height: 500px">
+            <div class="form-login">
+                <h2>Load project</h2>
+                <form class="form-horizontal" action="<{ url_for('load_project') }>" method="post"
+                      enctype="multipart/form-data">
+                    <% for field in load_form if field.label.text != 'CSRF Token'%>
+                    <% if field.type != "SubmitField" %>
+                    <div class="form-group" style="text-align: left">
+                        <{ field.label(class_="control-label col-sm-5", style="text-align: left") }>
+                        <div class="col-sm-7">
+                            <{ field(class="form-control") }>
+                        </div>
+                    </div>
+                    <% else %>
+                    <div class="col-md-12"><{ field(class="form-control btn btn-warning btn-block") }></div>
+                    <% endif%>
+                    <% endfor %>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+
+</html>
