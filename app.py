@@ -152,12 +152,13 @@ def read_paper(paper_id):
 
     sts = reviewer.summarise_paper_status(username)
     sel = reviewer.find_paper(username, paper_id)
+    tags = reviewer.get_exclusion_tags(username)
     hp = 'previous' in sel
     prv = '/paper/{}'.format(sel['previous']) if hp else '/'
     hn = 'next' in sel
     nxt = '/paper/{}'.format(sel['next']) if hn else '/'
     return render_template('Paper.html', title=paper_id, user=username, obj=paper_id, sts=sts,
-                           paper=sel['paper'], form=sel['form'], id=paper_id, out_reasons=out_reasons,
+                           paper=sel['paper'], form=sel['form'], id=paper_id, out_reasons=tags,
                            has_previous=hp, previous=prv,
                            has_next=hn, next=nxt)
 
@@ -194,6 +195,44 @@ def abstract_wc_all():
 
     txt = ' '.join(p.Abstract for p in reviewer.find_papers(username))
     return send_file(reviewer.make_word_cloud(txt), mimetype='image/png')
+
+
+@app.route('/exclusion')
+def tags_list():
+    check = check_info()
+    if check:
+        return check
+    username = session.get('username')
+    tags = reviewer.get_exclusion_tags(username)
+    tags = [tag for tag in tags if tag != 'X Topic']
+    return render_template('Tags.html', tags=tags)
+
+
+@app.route('/exclusion/add', methods=['POST'])
+def add_tag():
+    check = check_info()
+    if check:
+        return check
+    username = session.get('username')
+    tags = reviewer.get_exclusion_tags(username)
+
+    content = request.form['content']
+    if not content or content in tags:
+        return redirect('/')
+
+    tags.append(content)
+    return redirect('/')
+
+
+@app.route('/exclusion/delete/<tag_id>')
+def delete_tag(tag):
+    check = check_info()
+    if check:
+        return check
+    username = session.get('username')
+    tags = reviewer.get_exclusion_tags(username)
+    tags.remove(tag)
+    return redirect('/')
 
 
 @app.route('/output/csv')

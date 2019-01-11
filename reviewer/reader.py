@@ -48,6 +48,9 @@ class Reviewer:
             res['next'] = self.Selected[i + 1]
         return res
 
+    def get_exclusion_tags(self):
+        return self.PaperList.ExclusionTags
+
     def get_bib_all(self):
         return self.PaperList.get_bib_string()
 

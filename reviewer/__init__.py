@@ -197,3 +197,7 @@ def summarise_paper_status(user):
     summary = summarise_status(sts)
     summary += [('ex ' + st, v) for st, v in summarise_status(sts, True) if 'Out' not in st]
     return summary
+
+
+def get_exclusion_tags(user):
+    return Reviewers[user].PaperList.ExclusionTags

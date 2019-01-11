@@ -4,11 +4,11 @@ from io import BytesIO
 __author__ = 'TimeWz667'
 __all__ = ['make_word_cloud']
 
-EscapeWords = ['background','methods','results','conclusions','included',
-               'used','used','using','use','compared','may','associated',
-               'will','conducted','however','identified','will','different',
-               'difference','can','provide','based','approach','across','factors',
-               'two','potential', 'many', 'much', 'more', 'could', 'would']
+EscapeWords = ['background', 'methods', 'results', 'conclusions', 'included',
+               'used', 'used', 'using', 'use', 'compared', 'may', 'associated',
+               'will', 'conducted', 'however', 'identified', 'will', 'different',
+               'difference', 'can', 'provide', 'based', 'approach', 'across','factors',
+               'two', 'potential', 'many', 'much', 'more', 'could', 'would']
 
 
 def make_word_cloud(txt):

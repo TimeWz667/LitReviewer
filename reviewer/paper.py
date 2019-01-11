@@ -89,16 +89,18 @@ class Paper:
 
 
 class PaperList:
-    def __init__(self, name, papers, forms):
+    def __init__(self, name, papers, forms, exc=None):
         self.Name = name
         self.Papers = papers
         self.Papers.sort(key=lambda x: (x.Authors, x.Year))
         self.Forms = forms
+        self.ExclusionTags = exc if exc else ['X Topic']
 
     def to_json(self):
         return {
             'Papers': [paper.to_json() for paper in self.Papers],
-            'Forms': self.Forms.to_json()
+            'Forms': self.Forms.to_json(),
+            'Exclusions': self.ExclusionTags
         }
 
     def id_list(self, status='None', tags=None, exclusive=False):
@@ -187,6 +189,10 @@ def paper_list_from_reviewer(path):
 
     papers = [Paper.from_json(ent) for ent in js['Papers']]
     form = PaperForm.from_json(js['Forms'])
+    if 'Exclusions' in js:
+        exc = list(js['Exclusions'])
+    else:
+        exc = None
 
     name = path.split('/')[-1].split('.')[0]
-    return PaperList(name, papers, form)
+    return PaperList(name, papers, form, exc)
