@@ -197,7 +197,7 @@ def abstract_wc_all():
     return send_file(reviewer.make_word_cloud(txt), mimetype='image/png')
 
 
-@app.route('/exclusion')
+@app.route('/exclusion', methods=['GET', 'POST'])
 def tags_list():
     check = check_info()
     if check:
@@ -205,6 +205,12 @@ def tags_list():
     username = session.get('username')
     tags = reviewer.get_exclusion_tags(username)
     tags = [tag for tag in tags if tag != 'X Topic']
+
+    if request.method == 'POST':
+        if 'btn' in request.form:
+            if request.form['btn'] == 'Save':
+                reviewer.save_project(username)
+
     return render_template('Tags.html', tags=tags)
 
 
@@ -218,13 +224,14 @@ def add_tag():
 
     content = request.form['content']
     if not content or content in tags:
-        return redirect('/')
+        return redirect('/exclusion')
 
     tags.append(content)
-    return redirect('/')
+    # reviewer.save_project(username)
+    return redirect('/exclusion')
 
 
-@app.route('/exclusion/delete/<tag_id>')
+@app.route('/exclusion/delete/<tag>')
 def delete_tag(tag):
     check = check_info()
     if check:
@@ -232,7 +239,8 @@ def delete_tag(tag):
     username = session.get('username')
     tags = reviewer.get_exclusion_tags(username)
     tags.remove(tag)
-    return redirect('/')
+    # reviewer.save_project(username)
+    return redirect('/exclusion')
 
 
 @app.route('/output/csv')
